@@ -702,7 +702,6 @@ export default function Home() {
                   style={{
                     left: `${i * 2.5}%`,
                     animationDelay: `${i * 0.05}s`,
-                    flowerType: ['🌸', '🌹', '🌺', '🌷', '💮', '💐'][i % 6] as any,
                   }}
                 >
                   {['🌸', '🌹', '🌺', '🌷', '💮', '💐'][i % 6]}
