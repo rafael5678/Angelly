@@ -586,7 +586,7 @@ export default function Home() {
                     animationDelay: `${i * 0.1}s`,
                     '--angle': `${(i * 12)}deg`,
                     '--distance': `${150 + Math.random() * 100}px`,
-                  }}
+                  } as any}
                 >
                   {['🌸', '🌹', '🌺', '💐', '🌷'][Math.floor(Math.random() * 5)]}
                 </div>
