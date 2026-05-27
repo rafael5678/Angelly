@@ -39,23 +39,22 @@ export default function Home() {
       createConfetti();
 
       setCurtainOpen(true);
-
-      if (audioRef.current) {
-        audioRef.current.volume = 0.5;
-        audioRef.current.loop = true;
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch((err) => {
-          console.log('Reproducción automática bloqueada, hacer clic en el botón de música');
-          setIsPlaying(false);
-        });
-      }
     }
   }, [step]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === '2002') {
+      if (audioRef.current) {
+        audioRef.current.volume = 0.5;
+        audioRef.current.loop = true;
+        audioRef.current.play().then(() => {
+          setIsPlaying(true);
+        }).catch(() => {
+          setIsPlaying(false);
+        });
+      }
+      
       setStep('loading');
       setError(false);
       setTimeout(() => setStep('letter'), 3000);
